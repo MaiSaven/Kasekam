@@ -1,0 +1,261 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-size: 16px;
+    font-family: "Rubik", sans-serif;
+  }
+  
+  /*
+            Format
+  ((()))***********************((()))
+  */
+  :root {
+    --color-pink: rgb(220, 87, 173);
+    --color-blue: rgb(85, 129, 212);
+    --color-white-gray: rgb(57, 57, 57);
+    --color-burlywood: burlywood;
+    --color-blue-dark: rgb(65, 74, 120);
+    --color-blue-light: rgb(72, 125, 248);
+    --color-blue-standard: rgb(143, 145, 207);
+    --color-blue-green-low: rgb(166, 205, 232);
+    --color-blue-border: rgb(92, 147, 186);
+    --color-white: rgb(255, 255, 255);
+    --color-yellow-green-low: rgb(248, 255, 232);
+    --color-shadow-white-smoke: rgb(228, 249, 255);
+    --color-line-gray: rgba(0, 0, 0, 0.27);
+  }
+  
+  /*
+            Globle
+  ((()))***********************((()))
+  */
+  
+  /*G Height */
+  .hg-10 {
+    height: 10px;
+  }
+  .hg-20 {
+    height: 20px;
+  }
+  .hg-30 {
+    height: 30px;
+  }
+  .hg-40 {
+    height: 40px;
+  }
+  
+  /* Width */
+  .wd-50 {
+    width: 50px;
+  }
+  .wd-100 {
+    width: 100px;
+  }
+  .wd-150 {
+    width: 150px;
+  }
+  .wd-200 {
+    width: 200px;
+  }
+  .wd-250 {
+    width: 250px;
+  }
+  .wd-300 {
+    width: 300px;
+  }
+  .wd-400 {
+    width: 400px;
+  }
+  .wd-500 {
+    width: 500px;
+  }
+  .wd-30pt {
+    width: 30%;
+  }
+  .wd-40pt {
+    width: 40%;
+  }
+  .wd-50pt {
+    width: 50%;
+  }
+  .wd-58pt {
+    width: 58.5%;
+  }
+  .wd-60pt {
+    width: 60%;
+  }
+  .wd-70-pt {
+    width: 70%;
+  }
+  .wd-100pt {
+    width: 100%;
+  }
+  
+  /*G Padding */
+  .pd-5 {
+    padding: 5px;
+  }
+  .pd-10 {
+    padding: 10px;
+  }
+  .pd-x-low {
+    padding: 0px 5px;
+  }
+  .pd-x-mid {
+    padding: 0px 10px;
+  }
+  .pd-x-hig {
+    padding: 0px 20px;
+  }
+  
+  .pd-xl-5 {
+    padding: 0px 5px;
+  }
+  .pd-xl-10 {
+    padding: 0px 10px;
+  }
+  
+  .pd-b-5 {
+    padding: 5px 0px;
+  }
+  
+  /*G Margin */
+  .mg-l-5 {
+    margin-left: 5px;
+  }
+  .mg-l-10 {
+    margin-left: 10px;
+  }
+  .mg-l-15 {
+    margin-left: 15px;
+  }
+  .mg-l-20 {
+    margin-left: 20px;
+  }
+  .mg-l-80 {
+    margin-left: 80px;
+  }
+  .mg-l-90 {
+    margin-left: 90px;
+  }
+  .mg-l-100 {
+    margin-left: 100px;
+  }
+  
+  .mg-r-5 {
+    margin-right: 5px;
+  }
+  .mg-r-10 {
+    margin-right: 10px;
+  }
+  
+  /*G Margin X Y  */
+  .mg-xl-5 {
+    margin: 0px 5px;
+  }
+  .mg-xl-10 {
+    margin: 0px 10px;
+  }
+  
+  /*G Margin top  */
+  .mg-t-5 {
+    margin-top: 5px;
+  }
+  .mg-t-10 {
+    margin-top: 10px;
+  }
+  .mg-b-5 {
+    margin-bottom: 5px;
+  }
+  .mg-b-10 {
+    margin-bottom: 10px;
+  }
+  
+  /*G Radius */
+  .radius-low {
+    border-radius: 6px;
+  }
+  .radius-mid {
+    border-radius: 12px;
+  }
+  .radius-hig {
+    border-radius: 22px;
+  }
+  
+  /*G Image */
+  img {
+    width: 100%;
+    height: 100%;
+  }
+  .img-profile {
+    object-fit: cover;
+    border-radius: 50%;
+  }
+  
+  /*G Input Text  */
+  input {
+    border: none;
+    height: 100%;
+    width: 100%;
+    color: rgb(57, 57, 57);
+  }
+  
+  input:focus {
+    outline: 2px solid var(--color-blue);
+    border: none;
+  }
+  
+  /*G Button */
+  button {
+    border: none;
+    /* padding: 5px; */
+    padding: 0px 15px;
+    height: 30px;
+    border-radius: 4px;
+  }
+  button:focus {
+    outline: 2px solid var(--color-blue);
+  }
+  .btn-blue-light {
+    background-color: rgb(166, 205, 232);
+    color: var(--color-white);
+  }
+  .btn-blue-standard {
+    background-color: var(--color-blue-standard);
+    color: var(--color-white);
+  }
+  
+  /*G Line */
+  .item-line {
+    float: left;
+  }
+  
+  /*G Date Time */
+  .date-time {
+    font-size: 10px;
+  }
+  
+  /* G Font size  */
+  .font-9 {
+    font-size: 9px;
+  }
+  .font-9 {
+    font-size: 9px;
+  }
+  .font-9 {
+    font-size: 9px;
+  }
+  .font-9 {
+    font-size: 9px;
+  }
+  
+  /* Border */
+  .border-input {
+    border: 1px solid var(--color-blue-dark);
+  }
+  
+  /*
+            Custom
+  ((()))***********************((()))
+  */

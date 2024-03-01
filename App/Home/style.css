@@ -1,0 +1,54 @@
+@import url('../Assets/Globle/style.css');
+
+/*
+          Custom
+((()))***********************((()))
+*/
+
+.app {
+  /* position: relative; */
+}
+
+/* Contain Post  */
+.contain {
+  /* margin-top: 120px; */
+  overflow: hidden;
+  /* background-color: yellow; */
+}
+
+.post_l1 {
+  width: 100%;
+  overflow: hidden;
+  padding: 10px;
+  /* background-color: red; */
+}
+.post_img {
+  width: 100%;
+}
+.post_info {
+  width: 90%;
+  height: 100%;
+  margin: auto;
+  /* overflow: hidden; */
+  /* position: relative; */
+  /* background-color: rgb(184, 217, 247); */
+  /* border: 1px solid rgb(170, 170, 170);  */
+  border: 1px solid var(--color-line-gray);
+}
+.post_user {
+  /* background-color: blueviolet; */
+}
+.post_profile {
+  width: 35px;
+  height: 35px;
+}
+.post_event {
+  width: 100%;
+  border-top: 1px solid var(--color-line-gray);
+  /* background-color: rebeccapurple; */
+  /* position: absolute; */
+  /* bottom: 0; */
+}
+.post_coment {
+  /* background-color: yellow; */
+}
