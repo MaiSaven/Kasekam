@@ -17,6 +17,7 @@
     --color-burlywood: burlywood;
     --color-blue-dark: rgb(65, 74, 120);
     --color-blue-light: rgb(72, 125, 248);
+    --color-blue-light-super:rgb(67, 217, 244);
     --color-blue-standard: rgb(143, 145, 207);
     --color-blue-green-low: rgb(166, 205, 232);
     --color-blue-border: rgb(92, 147, 186);
@@ -24,6 +25,9 @@
     --color-yellow-green-low: rgb(248, 255, 232);
     --color-shadow-white-smoke: rgb(228, 249, 255);
     --color-line-gray: rgba(0, 0, 0, 0.27);
+    --color-font-balck: rgb(33, 33, 33);
+    --color-font-balck-low: rgb(87, 102, 114);
+    --color-balck-line: rgb(222, 212, 212);
   }
   
   /*
@@ -188,9 +192,17 @@
     width: 100%;
     height: 100%;
   }
+  .img{
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+  }
   .img-profile {
     object-fit: cover;
     border-radius: 50%;
+  }
+  .img-cover{
+    object-fit: cover;
   }
   
   /*G Input Text  */
@@ -240,21 +252,50 @@
   .font-9 {
     font-size: 9px;
   }
-  .font-9 {
-    font-size: 9px;
+  .font-10 {
+    font-size: 10px;
   }
-  .font-9 {
-    font-size: 9px;
+  .font-12 {
+    font-size: 12px;
   }
-  .font-9 {
-    font-size: 9px;
+  .font-14 {
+    font-size: 14px;
+  }
+  .font-22{
+    font-size: 22px;
+  }
+  .font-24{
+    font-size: 24px;
   }
   
   /* Border */
   .border-input {
     border: 1px solid var(--color-blue-dark);
   }
-  
+
+  /*Display Flex*/
+  .line-flex{
+    display: flex;
+  }
+
+  /* Line  */
+  .line{
+    height: 1px;
+    background-color: var(--color-balck-line);
+    margin: 10px 0px;
+  }
+
+  /* Paragrap  */
+  p{
+    margin-bottom: 4px;
+  }
+
+
+  /* Box Shadow  */
+  .box-shadow{
+    box-shadow: 0px 0px 10px rgba(120, 124, 146, 0.219);
+  }
+
   /*
             Custom
   ((()))***********************((()))
