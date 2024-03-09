@@ -26,8 +26,13 @@
     --color-shadow-white-smoke: rgb(228, 249, 255);
     --color-line-gray: rgba(0, 0, 0, 0.27);
     --color-font-balck: rgb(33, 33, 33);
-    --color-font-balck-low: rgb(87, 102, 114);
+    --color-font-black-low: rgb(87, 102, 114);
+    --color-font-black: rgb(44, 45, 46);
     --color-balck-line: rgb(222, 212, 212);
+    --color-black-dark: rgba(0, 0, 0, 0.595);
+    --color-green-light: rgb(52, 238, 83);
+    --color-gray: rgb(133, 132, 135);
+    --color-red-light: rgb(232, 77, 77);
   }
   
   /*
@@ -73,6 +78,15 @@
   }
   .wd-500 {
     width: 500px;
+  }
+  .wd-10pt{
+    width: 10%;
+  }
+  .wd-15pt{
+    width: 15%;
+  }
+  .wd-20pt{
+    width: 20%;
   }
   .wd-30pt {
     width: 30%;
@@ -213,7 +227,12 @@
     color: rgb(57, 57, 57);
   }
   
-  input:focus {
+  select,input:focus {
+    outline: 2px solid var(--color-blue);
+    border: none;
+  }
+
+  .input-button:focus {
     outline: 2px solid var(--color-blue);
     border: none;
   }
@@ -236,6 +255,27 @@
   .btn-blue-standard {
     background-color: var(--color-blue-standard);
     color: var(--color-white);
+  }
+  .btn-edit{
+    width: 22px;
+    height: 22px;
+    font-size: 14px;
+    background-color: var(--color-back-dark);
+    color: var(--color-white);
+    outline: 1px solid var(--color-balck-line);
+  }
+  .btn_community{
+    color: var(--color-white);
+    background: linear-gradient(30deg, rgb(52, 238, 83), rgb(0, 208, 255));
+  }
+  .btn_post{
+    color: var(--color-white);
+    background: linear-gradient(30deg, var(--color-blue), rgb(67, 217, 244));
+  }
+  .btn_message{
+    color: var(--color-blue);
+    border: 1px solid var(--color-blue-light-super);
+    /* background: linear-gradient(30deg, var(--color-blue), rgb(67, 217, 244)); */
   }
   
   /*G Line */
@@ -277,12 +317,24 @@
   .line-flex{
     display: flex;
   }
+  .line-center{
+    justify-content: center;
+  }
+  .line-between{
+    justify-content: space-between;
+  }
 
   /* Line  */
   .line{
     height: 1px;
     background-color: var(--color-balck-line);
     margin: 10px 0px;
+  }
+  .line-green{
+    border: 1px solid var(--color-green-light);
+  }
+  .line-blue-light{
+    border: 1px solid var(--color-blue-light-super);
   }
 
   /* Paragrap  */
@@ -295,8 +347,26 @@
   .box-shadow{
     box-shadow: 0px 0px 10px rgba(120, 124, 146, 0.219);
   }
+  .box-shadow-hig{
+    box-shadow: 0px 0px 20px rgba(120, 124, 146, 0.485);
+  }
+
+  /* Circly */
+  .circly{
+    border-radius: 50%;
+  }
 
   /*
             Custom
   ((()))***********************((()))
   */
+
+  .icon-verify{
+    margin-top: 4px;
+    margin-left: 4px;
+    width: 18px;
+    height: 18px;
+    background-image: url('../icon/check-mark.png');
+    background-size: contain;
+    background-repeat: no-repeat;
+  }
