@@ -25,7 +25,7 @@ $(document).ready(function(){
     }
 
     function refresh(){
-      // location.reload();
+      location.reload();
     }
 
     function checkUser(){
@@ -149,6 +149,9 @@ $(document).ready(function(){
         dataType: 'json',
         success:function(data){
           alert(data.msg);
+          if(data.strError == '00'){
+            refresh();
+          }
         }
       })
     }
@@ -289,20 +292,20 @@ $(document).ready(function(){
 
       console.log('------------------KOKO-------->>');
 
-      alert(
-         ", " + proIdForUpdate             
-        +", " + productName.val()        
-        +", " + productWeight.val()      
-        +", " + productWeightType.val()  
-        +", " + productPriceAmount.val() 
-        +", " + productCurrency.val()    
-        +", " + productQuantityFrom.val()
-        +", " + productQuantityTo.val()  
-        +", " + productPeriodFrom.val() 
-        +", " + productPeriodTo.val()    
-        +", " + productDescription.val() 
-        +", " + postImageItem.attr('src')      
-      )
+      // alert(
+      //    ", " + proIdForUpdate             
+      //   +", " + productName.val()        
+      //   +", " + productWeight.val()      
+      //   +", " + productWeightType.val()  
+      //   +", " + productPriceAmount.val() 
+      //   +", " + productCurrency.val()    
+      //   +", " + productQuantityFrom.val()
+      //   +", " + productQuantityTo.val()  
+      //   +", " + productPeriodFrom.val() 
+      //   +", " + productPeriodTo.val()    
+      //   +", " + productDescription.val() 
+      //   +", " + postImageItem.attr('src')      
+      // )
 
       $.ajax({
         type: 'post',
@@ -324,6 +327,10 @@ $(document).ready(function(){
         dataType: 'json',
         success:function(data){
           alert(data.msg);
+
+          if(data.strError == '00'){
+            refresh();
+          }
         }
       })
     }

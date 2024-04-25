@@ -46,10 +46,10 @@
 
             if($res){
                 
-                $response = array('msg' => 'Data received successfully.', 'strError' => '00');
+                $response = array('msg' => 'Update product is successfully.', 'strError' => '00');
             }else{
                 
-                throw new Exception('Data received fail.');
+                throw new Exception('Update fail!');
             }
 
         } catch(Exception $e){
