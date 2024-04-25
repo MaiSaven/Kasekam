@@ -39,14 +39,5 @@ class UTencryption{
 
         return $decrypted;
     }
-
-    // Example usage
-    // $key = "YourSecretKey"; // This should be a secret and securely stored
-    // $string = "Hello, world!";
-    // $encrypted = encryptString($string);
-    // echo "Encrypted String: " . $encrypted . "\n";
-
-    // $decrypted = decryptString($encrypted);
-    // echo "Decrypted String: " . $decrypted . "\n";
 }
 ?>
