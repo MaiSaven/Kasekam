@@ -1,0 +1,69 @@
+@import url('../Assets/Globle/style.css');
+
+.contain{
+  padding: 10px 10px;
+}
+
+.name{
+  font-size: 22px;
+  color: var(--color-blue-border);
+}
+
+#listProduct{
+  /* background-color: green; */
+}
+.user_info{
+  /* background-color: rgba(65, 225, 161, 0.416); */
+  display: block;
+  /* flex-direction: column-reverse; */
+}
+.user_header{
+  height: 100px;
+  /* background-color: yellow; */
+}
+.user_info_detail{
+  /* background-color: orangered; */
+  /* height: 80%; */
+}
+
+/*Extra large devices (large desktops, 1200px and up)*/
+@media (min-width: 1200px) {
+
+}
+/*Large devices (desktops, 992px and up)*/
+@media (min-width: 992px) and (max-width: 1199.98px) {
+
+}
+/*Medium devices (tablets, 768px and up)*/
+@media (min-width: 768px) and (max-width: 991.98px) {
+	.user_header{
+    height: 80px;
+  }
+  .user_info{
+    display: flex;
+    flex-direction: column-reverse;
+  }
+
+}
+
+/*Small devices (landscape phones, 576px and up)*/
+@media (min-width: 576px) and (max-width: 767.98px){ 
+  .user_header{
+    height: 80px;
+  }
+  .user_info{
+    display: flex;
+    flex-direction: column-reverse;
+  }
+}
+
+/*Extra small devices (portrait phones, less than 576px)*/
+@media (max-width: 575.98px) {
+  .user_header{
+    height: 80px;
+  }
+  .user_info{
+    display: flex;
+    flex-direction: column-reverse;
+  }
+}

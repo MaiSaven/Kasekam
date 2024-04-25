@@ -1,5 +1,5 @@
 // UTimage.js
-export class UTimage {
+export class UTImage {
 
     //()=> Test Alert
     static alt(x){

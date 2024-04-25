@@ -99,6 +99,9 @@
 .btn_contact {
   width: 56.5%;
 }
+.btn_contact>a{
+  text-decoration: none;
+}
 .new_event {
   margin-top: 10px;
 }

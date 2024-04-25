@@ -65,9 +65,7 @@
 }
 .product_img{
     width: 100%;
-    /* height: 100px; */
-    overflow: hidden;
-    /* background-color: red; */
+    /* height: 500px; */
 }
 
 .btn_back{
@@ -94,7 +92,13 @@
   position: relative;
 }
 
-.btnEdit{
+.name{
+  font-size: 22px;
+  color: var(--color-blue-border);
+}
+
+
+.btn_edit{
   position: absolute;
   right: 0;
   transform: translate(-14px, 5px);
@@ -110,6 +114,7 @@
 /* Popup  */
 
 .popup_main{
+  
   width: 100%;
   height: 100%;
   /* background-color: rgba(42, 90, 44, 0.499); */
@@ -117,10 +122,11 @@
   display: flex;
   z-index: 98;
   transform: translate(-10px, -10px);
+  display: none;
 }
 .popup_post{
   width: 70%;
-  height: 55vh;
+  /* height: 55vh; */
   z-index: 99;
   background-color: rgb(252, 252, 252);
   padding: 20px;
@@ -128,6 +134,7 @@
 }
 .popup_cover{
   display: flex;
+  /* justify-content: space-between; */
 }
 
 .post_image{
@@ -176,12 +183,11 @@
   padding-left: 12px;
   position: relative;
 }
-#upload_file_img{
+.upload_fileImg{
   position: absolute;
   left: 0;
   height: 100%;
   width: 100%;
-  /* border-radius: 50%; */
   opacity: 0;
 }
 
@@ -210,6 +216,10 @@
   font-size: 14px;
 }
 
+#btnUpdateProduct{
+  color: var(--color-white);
+  background: linear-gradient(30deg, rgb(52, 238, 83), rgb(0, 208, 255));
+}
 
 
 
@@ -218,11 +228,11 @@
    
 /*Extra large devices (large desktops, 1200px and up)*/
 @media (min-width: 1200px) {
-	
+
 }
 /*Large devices (desktops, 992px and up)*/
 @media (min-width: 992px) and (max-width: 1199.98px) {
-	
+
 }
 /*Medium devices (tablets, 768px and up)*/
 @media (min-width: 768px) and (max-width: 991.98px) {
@@ -240,7 +250,7 @@
   }
   .popup_post{
     width: 340px;
-    height: 90vh;
+    /* height: 90vh; */
   }
   .post_info{
     width: 100%;
@@ -267,7 +277,7 @@
   }
   .popup_post{
     width: 340px;
-    height: 90vh;
+    /* height: 90vh; */
   }
   .post_info{
     width: 100%;
@@ -294,7 +304,7 @@
   }
   .popup_post{
     width: 340px;
-    height: 90vh;
+    /* height: 90vh; */
   }
   .post_info{
     width: 100%;
