@@ -1,3 +1,4 @@
+import { UTCookies } from "../Assets/Utile/UTCookies.js";
 import { UTImage } from "../Assets/Utile/UTImage.js";
 import { UTResponse } from "../Assets/Utile/UTResponse.js";
 
@@ -6,6 +7,7 @@ $(document).ready(function(){
     Init();
     
     function Init(){
+      // UTCookies.checkCookie();
       getProduct();
     }
     // -------------------
@@ -66,6 +68,7 @@ $(document).ready(function(){
               setProcudeImageWidth();
             }
           }else{
+            alert('error.');
             console.log(data.msg);
 
             $("#listProduct").html( `<div class="data_not_found mg-auto">
@@ -75,7 +78,5 @@ $(document).ready(function(){
         }
       })
     }
-    
-    
 
   })

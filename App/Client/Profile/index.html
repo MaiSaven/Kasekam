@@ -34,9 +34,23 @@
 <body>
     <div class="contain">
 
-      
-      <div class="header">
+      <!-- Popup delete product -->
+      <div class="box_confirm radius-hig pd-10 shadow line-blue-light">
+        <div class="box_icon item-center">
+          <i class="fa-regular fa-circle-question font-50 text-red"></i>
+        </div>
+        <div class="line"></div>
+        <div class="box_description item-center">
+          <h4>Are you sure to delete product?</h4>
+        </div>
+        <div class="line"></div>
+        <div class="box_button item-center mg-t-20">
+          <button class="btn_yes btn-yes wd-60 mg-r-5" id="btnYes">Yes</button>
+          <button class="btn_no btn-no wd-60 mg-l-5" id="btnNo">No</button>
+        </div>
+      </div>
 
+      <div class="header">
         <div class="popup_main">
           
           <div class="popup_post radius-hig box-shadow-hig line-blue-light">
@@ -61,7 +75,7 @@
 
                   <div class="popup_upload_img">
                     <img class="post_image_item radius-mid" src="" alt="" id="postImageItem">
-                    <button class="btn_cancel circly" id="btn_cancel_img"><i class="fa-solid fa-minus"></i></button>
+                    <button type="button" class="btn_cancel circly" id="btn_cancel_img"><i class="fa-solid fa-minus"></i></button>
                   </div>
                 </div>
 
@@ -128,7 +142,7 @@
               <img src="../Assets/Profile.jpg" class="img radius-hig" alt="" id="userImageProfile">
           </div>
           <div class="edit_info">
-              <button class="edit btn-blue-light">Edit Info</button>
+              <button class="edit btn-blue-light" id="btnEditUserInfo">Edit Info</button>
           </div>
           <div class="user_info">
             <div class="user_name">
@@ -171,19 +185,20 @@
         </div>
         <div class="post_and_message">
           <button class="btn_post" id="btnPostOut">Post</button>
-          <button class="btn_message"><i class="fa-brands fa-rocketchat"></i></button>
+          <!-- <button class="btn_message"><i class="fa-brands fa-rocketchat"></i></button> -->
         </div>
       </div>
 
       <!-- Product Info  -->
       <div class="container">
-        <div class="row row-cols-2 row-cols-sm-2 row-cols-md-2 row-cols-lg-2 row-cols-xl-2" id="listProduct">
+        <div class="row row-cols-2 row-cols-sm-2 row-cols-md-2 row-cols-lg-4 row-cols-xl-4" id="listProduct">
             
           <!-- Product 1 -->
           <div class="col pd-10">
             <div class="product_info box-shadow radius-low box-shadow pd-10">
               
               <button class="btn_edit btn-edit" id="btnEdit"><i class="fa-regular fa-pen-to-square"></i></button>
+              <button class="btn_delete btn-edit" id="btnDelete"><i class="fas fa-trash-restore"></i></button>
               
               <div class="product_img">
                   <img src="../Assets/yasaka-pagoda-sannen-zaka-street-kyoto-japan.jpg" class="img radius-low" alt="">

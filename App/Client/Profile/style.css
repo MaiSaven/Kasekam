@@ -105,6 +105,16 @@
   width: 22px;
   height: 22px;
   padding: 1px 4px;
+  color: blue;
+}
+.btn_delete{
+  position: absolute;
+  right: 0;
+  transform: translate(-14px, 32px);
+  width: 22px;
+  height: 22px;
+  padding: 1px 4px;
+  color: red;
 }
 
 .product_buttom{
@@ -221,6 +231,17 @@
   background: linear-gradient(30deg, rgb(52, 238, 83), rgb(0, 208, 255));
 }
 
+.box_confirm{
+  width:400px;
+  /* height: 200px; */
+  background-color: rgb(255, 255, 255);
+  position: fixed;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  z-index: 99;
+  display: none;
+}
 
 
 

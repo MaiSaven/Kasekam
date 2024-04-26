@@ -33,6 +33,7 @@
     --color-green-light: rgb(52, 238, 83);
     --color-gray: rgb(133, 132, 135);
     --color-red-light: rgb(232, 77, 77);
+    --color-white-low:rgba(255, 255, 255, 0.577);
   }
   
   /*
@@ -70,6 +71,12 @@
   }
   .wd-50 {
     width: 50px;
+  }
+  .wd-60 {
+    width: 60px;
+  }
+  .wd-70 {
+    width: 70px;
   }
   .wd-100 {
     width: 100px;
@@ -203,6 +210,9 @@
   .mg-t-10 {
     margin-top: 10px;
   }
+  .mg-t-20 {
+    margin-top: 20px;
+  }
   .mg-b-5 {
     margin-bottom: 5px;
   }
@@ -261,6 +271,9 @@
   .text-white{
     color: aliceblue;
   }
+  .text-red{
+    color: var(--color-red-light);
+  }
   .rm-underline{
     text-decoration: none;
   }
@@ -288,8 +301,8 @@
     width: 22px;
     height: 22px;
     font-size: 14px;
-    background-color: var(--color-back-dark);
-    color: var(--color-white);
+    /* background-color: var(--color-back-dark); */
+    background-color: var(--color-white-low);
     outline: 1px solid var(--color-balck-line);
   }
   .btn_community{
@@ -312,6 +325,14 @@
   #btn_update{
     color: var(--color-white);
     background: linear-gradient(30deg, rgb(52, 238, 83), rgb(0, 208, 255));
+  }
+  .btn-yes {
+    background: linear-gradient(30deg, var(--color-blue), var(--color-blue-standard) );
+    color: var(--color-white);
+  }
+  .btn-no{
+    color: aliceblue;
+    background: linear-gradient(30deg, rgb(248, 55, 55), rgb(234, 134, 121));
   }
   
   /*G Line */
@@ -343,6 +364,12 @@
   .font-24{
     font-size: 24px;
   }
+  .font-32{
+    font-size: 32px;
+  }
+  .font-50{
+    font-size: 50px;
+  }
   
   /* Border */
   .border-input {
@@ -361,6 +388,10 @@
   }
   .aline-center{
     align-items: center;
+  }
+  .item-center{
+    display: flex;
+    justify-content: center;
   }
 
   /* Line  */

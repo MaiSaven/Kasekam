@@ -1,6 +1,8 @@
 <?php
     include '../Configuration/configuration.php';
 
+    // phpinfo();
+
     function retrieveAllProduct($con){  
 
         $response = array();

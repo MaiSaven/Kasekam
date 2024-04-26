@@ -5,7 +5,7 @@ $(document).ready(function () {
   Init();
 
   function Init() {
-    console.log('999');
+    UTCookies.checkCookie();
     getUserInfo();
     logOut();
   }

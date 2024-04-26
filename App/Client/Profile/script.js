@@ -8,6 +8,7 @@ $(document).ready(function(){
     const userId = UTCookies.getCookie('userId');
     const userIdURL = UTURL.getDataFromURL('UserId');
     var proIdForUpdate ='';
+    var proIdForDelete ='';
 
     Init();
     
@@ -21,7 +22,8 @@ $(document).ready(function(){
       uploadImage();
       removeImage();
       postProduct();
-      updateProduct();     
+      updateProduct();   
+      confirmDeleteYN();  
     }
 
     function refresh(){
@@ -38,6 +40,17 @@ $(document).ready(function(){
       console.log('user : ' + user);
       return user;
       // window.location.replace("../Profile"); // load current user
+    }
+
+    function hideBtnUpdateDelete(){
+      if(userIdURL != null && userIdURL !=''){
+        if(userIdURL !== userId){
+          $('#btnEditUserInfo').css('display','none');
+          $('#btnPostOut').css('display','none');
+          $('.btn_edit').css('display','none');
+          $('.btn_delete').css('display','none');
+        }
+      }
     }
   
     // -------------------
@@ -131,7 +144,7 @@ $(document).ready(function(){
 
       $.ajax({
         type: 'post',
-        url: '/Assignment/Kasekam/App/Server/Product/registerProduct.php',
+        url: '/Assignment2/Kasekam/App/Server/Product/registerProduct.php',
         data:{
           UserId       :  userId,     
           Name         :  productName.val(),     
@@ -164,6 +177,7 @@ $(document).ready(function(){
               <div class="product_info box-shadow radius-low box-shadow pd-10">
                 
                 <button class="btn_edit btn-edit" id="${ProId}"><i class="fa-regular fa-pen-to-square"></i></button>
+                <button class="btn_delete btn-edit" id="${ProId}"><i class="fas fa-trash-restore"></i></button>
                 
                 <div class="product_img">
                     <img src="${ImageId}" class="img radius-low" alt="">
@@ -209,6 +223,8 @@ $(document).ready(function(){
             setProduct( data[i]['ProId'], data[i]['Name'], data[i]['Weight'], data[i]['WeightType'], data[i]['PriceAmount'], data[i]['Currency'], data[i]['QtyFrom'], data[i]['QtyTo'], data[i]['PeriodFrom'], data[i]['PeriodTo'], data[i]['Description'], data[i]['ImageId'] )
             setProcudeImageWidth();
             getUpdateProduct();
+            getDeleteProduct();
+            hideBtnUpdateDelete();
           }
         }
       })
@@ -292,24 +308,9 @@ $(document).ready(function(){
 
       console.log('------------------KOKO-------->>');
 
-      // alert(
-      //    ", " + proIdForUpdate             
-      //   +", " + productName.val()        
-      //   +", " + productWeight.val()      
-      //   +", " + productWeightType.val()  
-      //   +", " + productPriceAmount.val() 
-      //   +", " + productCurrency.val()    
-      //   +", " + productQuantityFrom.val()
-      //   +", " + productQuantityTo.val()  
-      //   +", " + productPeriodFrom.val() 
-      //   +", " + productPeriodTo.val()    
-      //   +", " + productDescription.val() 
-      //   +", " + postImageItem.attr('src')      
-      // )
-
       $.ajax({
         type: 'post',
-        url: '/Assignment/Kasekam/App/Server/Product/updateProductInfo.php',
+        url: '/Assignment2/Kasekam/App/Server/Product/updateProductInfo.php',
         data:{
           ProId        :  proIdForUpdate,     
           Name         :  productName.val(),     
@@ -341,12 +342,13 @@ $(document).ready(function(){
     function getUserInfo(){
       $.ajax({
         type: 'post',
-        url: '/Assignment/Kasekam/App/Server/User/retrieveUserInfo.php',
+        url: '/Assignment2/Kasekam/App/Server/User/retrieveUserInfo.php',
         data:{
           UserId : checkUser()
         },
         dataType: 'json',
         success:function(data){
+
           if(!data.strError){
             for (const i in data) {
               console.log(data[i]['UserId']);
@@ -360,6 +362,7 @@ $(document).ready(function(){
             
           }else{
             console.log(data.msg);
+            window.location.replace("../Profile")
           }
         }
       })
@@ -383,6 +386,51 @@ $(document).ready(function(){
     }
 
     //---------------------------
+    // Delete Product
 
+    function getDeleteProduct(){
+      $('.btn_delete').click(function(){
+
+        proIdForDelete = $(this).attr('id');
+
+        console.log('Button Delete Product ID: ' + proIdForDelete);
+        $('.box_confirm').slideDown();
+      })
+    }
+
+    function confirmDeleteYN(){
+
+      $('#btnNo').click(function(){
+        $('.box_confirm').slideUp();
+      })
+
+      $('#btnYes').click(function(){
+        deleteProduct();
+        $('.box_confirm').slideUp();
+      })
+    }
+
+    function deleteProduct(){
+      $.ajax({
+        type: 'post',
+        url: '/Assignment2/Kasekam/App/Server/Product/deleteProduct.php',
+        data:{
+          ProId        :  proIdForDelete,
+        },
+        dataType: 'json',
+        success:function(data){
+          alert(data.msg);
+
+          if(data.strError == '00'){
+            refresh();
+          }else{
+            alert(data.msg);
+          }
+        }
+      })
+    }
+
+
+    //=====================
 
   })
