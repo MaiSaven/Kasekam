@@ -28,7 +28,7 @@ $(document).ready(function () {
 
     $.ajax({
       type: "post",
-      url: "/Assignment/Kasekam/App/Server/User/retrieveUserForLogin.php",
+      url: "/Assignment2/Kasekam/App/Server/User/retrieveUserForLogin.php",
       data: {
         email: email.val(),
         password: password.val(),

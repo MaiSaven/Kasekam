@@ -26,7 +26,7 @@ $(document).ready(function () {
 
     $.ajax({
       type: "post",
-      url: "/Assignment/Kasekam/App/Server/User/retrieveUserForHomePage.php",
+      url: "/Assignment2/Kasekam/App/Server/User/retrieveUserForHomePage.php",
       data: {
         userId: userId
       },

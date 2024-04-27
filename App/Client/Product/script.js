@@ -55,7 +55,7 @@ $(document).ready(function(){
     function getProduct(){
       $.ajax({
         type: 'post',
-        url: '/Assignment/Kasekam/App/Server/Product/retrieveAllProduct.php',
+        url: '/Assignment2/Kasekam/App/Server/Product/retrieveAllProduct.php',
         data:{
           UserId : 'cus9999999'
         },

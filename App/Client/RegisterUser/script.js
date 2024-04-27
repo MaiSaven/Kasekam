@@ -122,7 +122,7 @@ $(document).ready(function () {
 
     $.ajax({
       type: 'post',
-      url: '/Assignment/Kasekam/App/Server/User/registerUser.php',
+      url: '/Assignment2/Kasekam/App/Server/User/registerUser.php',
       data:{
         firstName  : firstName.val(),
         lastName   : lastName.val(),

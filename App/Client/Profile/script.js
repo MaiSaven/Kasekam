@@ -213,7 +213,7 @@ $(document).ready(function(){
     function getProduct(){
       $.ajax({
         type: 'post',
-        url: '/Assignment/Kasekam/App/Server/Product/retrieveProductByUser.php',
+        url: '/Assignment2/Kasekam/App/Server/Product/retrieveProductByUser.php',
         data:{
           UserId : checkUser()
         },
@@ -258,7 +258,7 @@ $(document).ready(function(){
     function retrieveProductForUpdate(id){
       $.ajax({
         type: 'post',
-        url: '/Assignment/Kasekam/App/Server/Product/retrieveProductForUpdate.php',
+        url: '/Assignment2/Kasekam/App/Server/Product/retrieveProductForUpdate.php',
         data:{
           ProId : id
         },
