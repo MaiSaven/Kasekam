@@ -7,6 +7,7 @@ $(document).ready(function () {
   function Init() {
     UTCookies.checkCookie();
     getUserInfo();
+    searchProduct();
     logOut();
   }
 
@@ -18,6 +19,9 @@ $(document).ready(function () {
         window.location.replace("../Login");
     })
   }
+
+  //-----------------
+  // Get User Info for profile
 
   function getUserInfo(){
 
@@ -38,12 +42,29 @@ $(document).ready(function () {
     });
   }
 
+  // function postData() {
+  //   let cookies = UTCookies.getCookie('userId');
+  //   console.log('>>>cookies : '+ cookies);
+  // }
 
-  function postData() {
+  //----------------
+  // Search Product
 
-    let cookies = UTCookies.getCookie('userId');
-    console.log('>>>cookies : '+ cookies);
+  function searchProduct(){
+    $('.inp_search_info').on('input', function() {
 
+      var searchQuery = $(this).val();
+      
+      // var url = '../Product/?search=' + searchQuery;
+      var url = '../Product/?search=' + encodeURIComponent(searchQuery);
+
+      console.log(url);
+      
+      $('#product').attr('src', url);
+    });
 
   }
+
+
+
 });

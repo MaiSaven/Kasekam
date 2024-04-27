@@ -1,8 +1,13 @@
 import { UTCookies } from "../Assets/Utile/UTCookies.js";
 import { UTImage } from "../Assets/Utile/UTImage.js";
 import { UTResponse } from "../Assets/Utile/UTResponse.js";
+import { UTURL } from "../Assets/Utile/UTURL.js";
 
 $(document).ready(function(){
+
+    var search = UTURL.getDataFromURL('search');
+
+    console.log("search : "+ search);
 
     Init();
     
@@ -41,7 +46,7 @@ $(document).ready(function(){
                     Sale Quantiy : ${QtyFrom} ${WeightType} - ${QtyTo} ${WeightType}
                   </div>
                   <div class="available">
-                    Availble : ${PeriodFrom} - ${PeriodTo}
+                    Stock : ${PeriodFrom} to ${PeriodTo}
                   </div>
                 </div>
                 <a href="../ProductDetail/index.html?ProdId=${ProId}" target="_top"><button class="btn_community wd-100pt" id="000">View</button></a>
@@ -57,7 +62,7 @@ $(document).ready(function(){
         type: 'post',
         url: '/Assignment2/Kasekam/App/Server/Product/retrieveAllProduct.php',
         data:{
-          UserId : 'cus9999999'
+          search : search
         },
         dataType: 'json',
         success:function(data){
@@ -68,7 +73,6 @@ $(document).ready(function(){
               setProcudeImageWidth();
             }
           }else{
-            alert('error.');
             console.log(data.msg);
 
             $("#listProduct").html( `<div class="data_not_found mg-auto">

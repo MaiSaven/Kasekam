@@ -49,6 +49,7 @@ $(document).ready(function(){
           $('#btnPostOut').css('display','none');
           $('.btn_edit').css('display','none');
           $('.btn_delete').css('display','none');
+          // $('.btn_view').css('display','none');
         }
       }
     }
@@ -197,10 +198,10 @@ $(document).ready(function(){
                     Sale Quantiy : ${QtyFrom} ${WeightType} - ${QtyTo} ${WeightType}
                   </div>
                   <div class="available">
-                    Stock : ${PeriodFrom} - ${PeriodTo}
+                    Stock : ${PeriodFrom} to ${PeriodTo}
                   </div>
                 </div>
-                <a href="../ProductDetail/index.html?ProdId=${ProId}" target="_top"><button class="btn_community wd-100pt" id="000">View</button></a>
+                <a href="../ProductDetail/index.html?ProdId=${ProId}" target="_top"><button class="btn_community btn_view wd-100pt" id="000">View</button></a>
               </div>
             </div>
           `

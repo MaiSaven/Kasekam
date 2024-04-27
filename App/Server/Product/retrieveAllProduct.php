@@ -7,7 +7,12 @@
 
         $response = array();
 
-        $sql = "SELECT * FROM product_m";
+        // $proId = $_POST['proId'];
+        // $prodName = 'គ';
+        $prodName = $_POST['search'];
+
+        // $sql = "SELECT * FROM product_m";
+        $sql = "SELECT * FROM product_m WHERE pro_name LIKE COALESCE('%$prodName%', pro_name)";
 
         $res = $con->query($sql);
 

@@ -1,4 +1,5 @@
 import { GUTIL } from "../Assets/Globle/GUTIL.js";
+import { UTCookies } from "../Assets/Utile/UTCookies.js";
 import { UTResponse } from "../Assets/Utile/UTResponse.js";
 import { UTURL } from "../Assets/Utile/UTURL.js";
 
@@ -7,6 +8,7 @@ $(document).ready(function(){
   Init();
 
   function Init(){
+    UTCookies.checkCookie();
     setProcudeImageWidth();
     GUTIL.Globle();
     getProduct();
@@ -89,7 +91,7 @@ $(document).ready(function(){
                 Sale Quantiy : ${QtyFrom} ${WeightType} - ${QtyTo} ${WeightType}
             </div>
             <div class="available">
-                Stock : ${PeriodFrom} - ${PeriodTo}
+                Stock : ${PeriodFrom} to ${PeriodTo}
             </div>
             </div>
         <div class="line"></div>

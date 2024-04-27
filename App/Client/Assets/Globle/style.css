@@ -412,10 +412,16 @@
   .line-gray{
     border: 1px solid var(--color-line-gray);
   }
+  .line-black{
+    border: 2px solid var(--color-black-dark);
+  }
 
   /* Item */
   center{
     align-items: center;
+  }
+  .relative{
+    position: relative;
   }
 
   /* Paragrap  */

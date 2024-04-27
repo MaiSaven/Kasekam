@@ -1,6 +1,7 @@
 <?php
     include ('../Configuration/configuration.php');
     include ('../Utils/Validation/UTvalidation.php');
+    include ('../Utils/Encryption/UTencryption.php');
 
     header('Content-Type: application/json');
 
@@ -41,7 +42,7 @@
                                 'District'           => $rows['district'],
                                 'Commune'            => $rows['commune'],
                                 'Location'           => $rows['location'],
-                                'Password'           => $rows['password'],
+                                'Password'           => UTencryption::decryptString($rows['password']),
                                 'Profile'            => $rows['profile'],
                                 'Cover'              => $rows['cover'],
                                 'Register_date_time' => $rows['register_date_time'],

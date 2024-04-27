@@ -12,7 +12,7 @@
 
 .header {
   width: 100%;
-  height: 120px;
+  height: 90px;
   background-color: var(--color-yellow-green-low);
   border-bottom: 1px solid var(--color-line-gray);
   box-shadow: 0px 0px 20px var(--color-shadow-white-smoke);
@@ -20,11 +20,11 @@
   top: 0;
 }
 .header_left {
-  width: 70%;
+  width: 100%;
 }
 .header_right {
-  width: 30%;
-  height: 100%;
+  /* width: 30%;
+  height: 100%; */
   /* background-color: red; */
 }
 .header_up {
@@ -59,6 +59,9 @@
   margin-top: 25px;
   margin-left: 10px;
   width: 67%;
+  /* display: flex;
+  align-items: center; */
+  /* background-color: rebeccapurple; */
 }
 .inp_search_info {
   border: 1px solid var(--color-blue-dark);
@@ -68,17 +71,15 @@
   margin-top: 30px;
   margin-left: 10px;
   position: absolute;
-  right: 10px;
+  right: 20px;
+  /* background-color: red; */
 }
-/* .btn_search{
-    background-color: var(--color-blue-light);
-    color: rgb(255, 255, 255);
-} */
-
-.filer {
-  width: 110px;
-  height: 20px;
-  background-color: rgb(78, 66, 100);
+.btn_search{
+    /* background-color: var(--color-blue-light); */
+    /* color: rgb(255, 255, 255); */
+    height: 40.3px;
+    transform: translateX(-46px);
+    border-radius: 0px 20px 20px 0px;
 }
 
 .header_right_l2 {
@@ -108,8 +109,35 @@
 
 
 /* Fram  */
-.home{
+.component{
   margin-top: 120px;
   height: calc(100vh - 120px) !important;
   width: 100%;
+}
+
+
+ 
+/*Extra large devices (large desktops, 1200px and up)*/
+@media (min-width: 1200px) {
+
+}
+/*Large devices (desktops, 992px and up)*/
+@media (min-width: 992px) and (max-width: 1199.98px) {
+
+}
+/*Medium devices (tablets, 768px and up)*/
+@media (min-width: 768px) and (max-width: 991.98px) {
+
+}
+
+/*Small devices (landscape phones, 576px and up)*/
+@media (min-width: 576px) and (max-width: 767.98px){ 
+
+}
+
+/*Extra small devices (portrait phones, less than 576px)*/
+@media (max-width: 575.98px) {
+  .search_info{
+    width: 55%;
+  }
 }

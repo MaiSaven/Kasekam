@@ -1,0 +1,157 @@
+@import url("../Assets/Globle/style.css");
+
+body{
+  background-color: rgb(238, 246, 249);
+}
+
+.containers {
+  width: 90%;
+  /* background-color: rgb(243, 252, 255); */
+  /* background: linear-gradient(30deg, rgb(52, 238, 83), rgb(0, 208, 255)); */
+  /* background: linear-gradient(0deg,rgba(82, 126, 213, 0.399) 0%, rgba(116, 127, 131, 0.499) 100%); */
+  background: linear-gradient(-30deg, rgb(113, 215, 161), rgb(215, 210, 248));
+  border-radius: 40px;
+  padding: 25px 35px;
+  /* border: 2px solid rgb(191, 242, 252); */
+  box-shadow: rgba(127, 157, 171, 0.878) 0px 30px 30px -20px;
+  margin: 20px;
+  backdrop-filter: blur(1px);
+  margin: auto;
+  margin-top: 1%;
+}
+
+.btn_back{
+  position: absolute;
+}
+
+.heading {
+  text-align: center;
+  /* font-weight: 400; */
+  font-size: 30px;
+  color: rgb(20, 118, 179);
+}
+
+.form {
+  margin-top: 20px;
+}
+
+.form .input {
+  /* width: 100%; */
+  /* background: white; */
+  /* background: rgba(235, 228, 228, 0.263); */
+  border: none;
+  padding: 0px 20px;
+  border-radius: 20px;
+  margin-top: 15px;
+  /* box-shadow: #525455 0px 10px 10px -5px; */
+  /* border-inline: 2px solid transparent; */
+  border: 2px solid #12b1d1;
+  height: 40px;
+  box-shadow: inset 2px 2px 4px 0px rgb(197, 213, 224);
+}
+
+.form .label {
+  display: block;
+  margin-top: 10px;
+  margin-left: 10px;
+}
+
+.img_profile {
+  width: 267px;
+  height: 267px;
+  position: relative;
+}
+
+.img_cover {
+  /* width: 300px; */
+  height: 200px;
+  position: relative;
+}
+
+.btn_upload_img {
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+.upload_img_profile {
+  opacity: 0;
+  position: absolute;
+}
+
+.popup_upload_img {
+  width: 100%;
+  height: 100%;
+  position: absolute;
+}
+
+.showPassword{
+  background: none;
+  transform: translate(10px, 8px);
+  position: absolute;
+  right: 9px;
+}
+
+/*Extra large devices (large desktops, 1200px and up)*/
+@media (min-width: 1200px) {
+}
+/*Large devices (desktops, 992px and up)*/
+@media (min-width: 992px) and (max-width: 1199.98px) {
+  .img_profile {
+    margin: auto;
+    /* background-color: red; */
+    width: 200px;
+    height: 200px;
+  }
+  .img_cover {
+    height: 200px;
+  }
+}
+/*Medium devices (tablets, 768px and up)*/
+@media (min-width: 768px) and (max-width: 991.98px) {
+  .img_profile {
+    margin: auto;
+    /* background-color: red; */
+    width: 200px;
+    height: 200px;
+  }
+  .img_cover {
+    height: 200px;
+  }
+}
+
+/*Small devices (landscape phones, 576px and up)*/
+@media (min-width: 576px) and (max-width: 767.98px) {
+  .container {
+    margin: auto;
+    margin-top: 5%;
+  }
+  .img_profile {
+    margin: auto;
+    /* background-color: red; */
+    width: 200px;
+    height: 200px;
+  }
+  .img_cover {
+    height: 200px;
+  }
+}
+
+/*Extra small devices (portrait phones, less than 576px)*/
+@media (max-width: 575.98px) {
+  .container {
+    margin: auto;
+    margin-top: 10%;
+  }
+  .img_profile {
+    margin: auto;
+    /* background-color: red; */
+    width: 200px;
+    height: 200px;
+  }
+  .img_cover {
+    height: 200px;
+  }
+}
