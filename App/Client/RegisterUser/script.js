@@ -1,7 +1,9 @@
+import { Location } from "../Assets/ClassResources/Location.js";
 import { UTImage } from "../Assets/Utile/UTImage.js";
 import { UTResponse } from "../Assets/Utile/UTResponse.js";
 
 $(document).ready(function () {
+  var loca = new Location();
   var pageNo = 1;
 
   Init();
@@ -11,7 +13,9 @@ $(document).ready(function () {
     next();
     uploadImageProfile();
     uploadImageCover();
-    // console.log(pageNo);
+    loca.retrieveLocation('P','','province','ProvId','ProvName');
+    provinceChange();
+    districtChange();
     submit();
   }
 
@@ -78,14 +82,38 @@ $(document).ready(function () {
     });
   }
 
+  //-----------------------
+  // Retrieve Location
+
+  function provinceChange(){
+    $('#province').change(function(){
+      var provId = $(this).val();
+
+      $('#district option').not('[hidden]').remove();
+      $('#commune option').not('[hidden]').remove();
+      
+      loca.retrieveLocation('D',provId,'district','DistId','DistName');
+    })
+  }
+
+  function districtChange(){
+    $('#district').change(function(){
+      var distId = $(this).val();
+
+      $('#commune option').not('[hidden]').remove();
+
+      loca.retrieveLocation('C',distId,'commune','CommId','CommName');
+    })
+  }
+
+  //-----------------------
+  // Register User
+
   function submit(){
     $('#btnSubmit').click(function(){
       postData();
     })
   }
-
-
-  // ----------------
 
   function postData(){
     const firstName   = $('#firstName');
@@ -104,20 +132,20 @@ $(document).ready(function () {
     const imgCover    = $('#imgCover');
 
 
-    console.log(firstName.val()        );
-    console.log(lastName.val()         );
-    console.log(gender.val()           );
-    console.log(birthday.val()         );
-    console.log(phoneNumber.val()      );
-    console.log(province.val()         );
-    console.log(district.val()         );
-    console.log(commune.val()          );
-    console.log(location.val()         );
-    console.log(telegram.val()         );
-    console.log(email.val()            );
-    console.log(password.val()         );
-    console.log(imgProfile.attr('src') );
-    console.log(imgCover.attr('src')   );
+    // console.log(firstName.val()        );
+    // console.log(lastName.val()         );
+    // console.log(gender.val()           );
+    // console.log(birthday.val()         );
+    // console.log(phoneNumber.val()      );
+    // console.log(province.val()         );
+    // console.log(district.val()         );
+    // console.log(commune.val()          );
+    // console.log(location.val()         );
+    // console.log(telegram.val()         );
+    // console.log(email.val()            );
+    // console.log(password.val()         );
+    // console.log(imgProfile.attr('src') );
+    // console.log(imgCover.attr('src')   );
 
 
     $.ajax({
@@ -154,4 +182,8 @@ $(document).ready(function () {
       }
     })
   }
+
+  //-------------------------
+
+
 });

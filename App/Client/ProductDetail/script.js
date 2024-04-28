@@ -153,13 +153,13 @@ $(document).ready(function(){
                   <p>Address : ${Province}, ${District}, ${Commune}</p>
               </div>
               <div class="location">
-                  <p>Location : ${Location}</p>
+                  <p>Location : <a href="${Location}" target="_blank"">${Location}</a></p>
               </div>
               <div class="phone">
                   <p>Phone : ${Phone}</p>
               </div>
               <div class="telegram">
-                  <p>Telegram : ${Telegram}</p>
+                  <p>Telegram : <a href="${Telegram}" target="_blank"">${Telegram}</a></p>
               </div>
               <button class="btn_community"><a href="${Telegram}" class="rm-underline text-white">Contact <i class="fa-brands fa-telegram"></i></a></button>
             </div>

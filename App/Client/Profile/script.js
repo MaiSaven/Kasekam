@@ -358,12 +358,38 @@ $(document).ready(function(){
               setImageCover(data[i]['Cover']);
               setImageProfile(data[i]['Profile']);
               setUserName(data[i]['First_name'], data[i]['Last_name'])
-              setUserInfo( data[i]['Province'], data[i]['District'], data[i]['Commune'], data[i]['Location'], data[i]['Phone'], data[i]['Telegram']);
+              setUserInfo(data[i]['Location'], data[i]['Phone'], data[i]['Telegram']);
+              retrieveUserAddress(data[i]['Commune']);
             }
             
           }else{
             console.log(data.msg);
             window.location.replace("../Profile")
+          }
+        }
+      })
+    }
+
+    function retrieveUserAddress(commId){
+      console.log(commId);
+      $.ajax({
+        type: 'post',
+        url: '/Assignment2/Kasekam/App/Server/Location/retrieveAddressDetail.php',
+        data:{
+          CommId : commId
+        },
+        dataType: 'json',
+        success:function(data){
+
+          if(!data.strError){
+            for (const i in data) {
+              // setImageCover(data[i]['Cover']);
+              // $('#address').html(data[i]['ProvName'] +", " + data[i]['DistName'] + ", " + data[i]['CommName']);
+              setAddress(data[i]['ProvName'] +", " + data[i]['DistName'] + ", " + data[i]['CommName'])
+            }
+            
+          }else{
+            console.log(data.msg);
           }
         }
       })
@@ -378,12 +404,16 @@ $(document).ready(function(){
     function setUserName(First_name, Last_name){
       $('#userName').html(First_name + ' ' + Last_name);
     }
-    function setUserInfo(Province, District, Commune, Location, Phone, Telegram){
-      $('#address').html(Province +", " + District + ", " + Commune);
+    function setUserInfo(Location, Phone, Telegram){
       $('#location').html(Location);
+      $('#location').attr('href', Location);
       $('#phone').html(Phone);
       $('#telegram').html(Telegram);
+      $('#telegram').attr('href', Telegram);
       $('#contact').attr("href", Telegram);
+    }
+    function setAddress(Province, District, Commune){
+      $('#address').html(Province +", " + District + ", " + Commune);
     }
 
     //---------------------------

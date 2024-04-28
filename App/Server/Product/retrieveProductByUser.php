@@ -1,8 +1,12 @@
 <?php
     include '../Configuration/configuration.php';
+    include ('../Utils/Validation/UTvalidation.php');
 
-    function retrieveProductByUser($con){  
+    function retrieveProductByUser($con){ 
+
         $response = array();
+
+        UTvalidation::validateData($_POST['UserId']);
 
         $user_id = $_POST['UserId'];
         
@@ -11,6 +15,7 @@
             $sql = "SELECT * FROM product_m where user_id = '$user_id' ";
 
             $res = $con->query($sql);
+            
             while( $rows = $res->fetch_assoc() ){
 
                 $data = array(

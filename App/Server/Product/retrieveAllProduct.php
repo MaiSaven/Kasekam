@@ -7,8 +7,6 @@
 
         $response = array();
 
-        // $proId = $_POST['proId'];
-        // $prodName = 'គ';
         $prodName = $_POST['search'];
 
         // $sql = "SELECT * FROM product_m";
