@@ -1,3 +1,4 @@
+import { Location } from "../Assets/ClassResources/Location.js";
 import { UTCookies } from "../Assets/Utile/UTCookies.js";
 import { UTImage } from "../Assets/Utile/UTImage.js";
 import { UTResponse } from "../Assets/Utile/UTResponse.js";
@@ -5,6 +6,7 @@ import { UTResponse } from "../Assets/Utile/UTResponse.js";
 $(document).ready(function () {
 
   var userId = UTCookies.getCookie('userId');
+  var loca = new Location();
 
   Init();
 
@@ -12,6 +14,8 @@ $(document).ready(function () {
     UTCookies.checkCookie();
     back_onclick();
     getUserInfo();
+    provinceChange();
+    districtChange();
     uploadImageProfile();
     uploadImageCover();
     submit();
@@ -79,8 +83,20 @@ $(document).ready(function () {
 
         if(!data.strError){
           for (const i in data) {
+
+            // loca.retrieveLocation('P','','province','ProvId','ProvName',function(){
+            //   $('#province').val(data[i]['Province']);
+            // });
+            // loca.retrieveLocation('D',data[i]['Province'],'district','DistId','DistName',function(){
+            //   $('#district').val(data[i]['District']);
+            // });
+            // loca.retrieveLocation('C',data[i]['District'],'commune','CommId','CommName',function(){
+            //   $('#commune').val(data[i]['Commune']);
+            // });
+
             setUserInfo(data[i]['First_name'], data[i]['Last_name'], data[i]['Gender'], data[i]['Birthday'], data[i]['Phone'], data[i]['Province'], data[i]['District'], data[i]['Commune'], data[i]['Location'], data[i]['Telegram'], data[i]['Email'], data[i]['Password'],data[i]['Profile'] , data[i]['Cover']);
           }
+          
           
         }else{
           console.log(data.msg);
@@ -90,20 +106,58 @@ $(document).ready(function () {
   }
 
   function setUserInfo(First_name, Last_name, Gender, Birthday, Phone, Province, District, Commune, Location, Telegram, Email, Password, Profile, Cover){
+    // console.log(District);
+    // console.log(Commune);
+    
     $('#firstName').val(First_name);
     $('#lastName').val(Last_name);
     $('#gender').val(Gender);
     $('#birthday').val(Birthday);
     $('#phoneNumber').val(Phone);
-    $('#province').val(Province);
-    $('#district').val(District);
-    $('#commune').val(Commune);
+    // $('#province').val(Province);
+    // $('#district').val(District);
+    // $('#commune').val(Commune);
     $('#location').val(Location);
     $('#telegram').val(Telegram);
     $('#email').val(Email);
     $('#password').val(Password);
     $('#imgProfile').attr('src',Profile);
     $('#imgCover').attr('src',Cover);
+
+    loca.retrieveLocation('P','','province','ProvId','ProvName',function(){
+      $('#province').val(Province);
+    });
+    loca.retrieveLocation('D',Province,'district','DistId','DistName',function(){
+      $('#district').val(District);
+    });
+    loca.retrieveLocation('C',District,'commune','CommId','CommName',function(){
+      $('#commune').val(Commune);
+    });
+  }
+
+  //-----------------------
+  // Retrieve Location
+
+
+  function provinceChange(){
+    $('#province').change(function(){
+      var provId = $(this).val();
+
+      $('#district option').not('[hidden]').remove();
+      $('#commune option').not('[hidden]').remove();
+      
+      loca.retrieveLocation('D',provId,'district','DistId','DistName');
+    })
+  }
+
+  function districtChange(){
+    $('#district').change(function(){
+      var distId = $(this).val();
+
+      $('#commune option').not('[hidden]').remove();
+
+      loca.retrieveLocation('C',distId,'commune','CommId','CommName');
+    })
   }
 
 

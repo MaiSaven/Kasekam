@@ -1,9 +1,11 @@
+import { Location } from "../Assets/ClassResources/Location.js";
 import { GUTIL } from "../Assets/Globle/GUTIL.js";
 import { UTCookies } from "../Assets/Utile/UTCookies.js";
 import { UTResponse } from "../Assets/Utile/UTResponse.js";
 import { UTURL } from "../Assets/Utile/UTURL.js";
 
 $(document).ready(function(){
+  const loca = new Location();
 
   Init();
 
@@ -115,6 +117,7 @@ $(document).ready(function(){
           for (const i in data) {
             setUserInfo(data[i]['UserId'], data[i]['Profile'], data[i]['First_name'], data[i]['Last_name'], data[i]['Phone'], data[i]['Telegram'], data[i]['Province'], data[i]['District'], data[i]['Commune'], data[i]['Location'] )
             console.log('Email = ' + data[i]['Email']);
+            setAddress(data[i]['Commune'])
             GUTIL.ResponsiveProfile();
           }
           
@@ -149,8 +152,9 @@ $(document).ready(function(){
           <!-- user info detail -->
           <div class="user_info_detail pd-10">
             <div class="user_detail">
-              <div class="address">
-                  <p>Address : ${Province}, ${District}, ${Commune}</p>
+              <div class="address_box">
+                  
+                  <p>Address : <span id="address">Phnom Penh, Ok</span></p>
               </div>
               <div class="location">
                   <p>Location : <a href="${Location}" target="_blank"">${Location}</a></p>
@@ -161,12 +165,19 @@ $(document).ready(function(){
               <div class="telegram">
                   <p>Telegram : <a href="${Telegram}" target="_blank"">${Telegram}</a></p>
               </div>
-              <button class="btn_community"><a href="${Telegram}" class="rm-underline text-white">Contact <i class="fa-brands fa-telegram"></i></a></button>
+              <button class="btn_community"><a href="${Telegram}" class="rm-underline text-white" target="_blank">Contact <i class="fa-brands fa-telegram"></i></a></button>
             </div>
           </div>
         </div>
         `
     )
+  }
+
+  function setAddress(commId){
+    loca.retrieveAddress(commId, function(address) {
+      console.log('Province: '+ address.Province);
+      $('#address').html(address.Province +", " + address.District + ", " + address.Commune);
+    });
   }
 
   //-----------------------------
@@ -178,8 +189,5 @@ $(document).ready(function(){
       // window.history.go(-1);
     })
   }
-
-
-
 
 });

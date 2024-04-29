@@ -1,3 +1,4 @@
+import { Location } from "../Assets/ClassResources/Location.js";
 import { UTCookies } from "../Assets/Utile/UTCookies.js";
 import { UTImage } from "../Assets/Utile/UTImage.js";
 import { UTResponse } from "../Assets/Utile/UTResponse.js";
@@ -7,6 +8,7 @@ $(document).ready(function(){
 
     const userId = UTCookies.getCookie('userId');
     const userIdURL = UTURL.getDataFromURL('UserId');
+    var loca = new Location();
     var proIdForUpdate ='';
     var proIdForDelete ='';
 
@@ -359,37 +361,12 @@ $(document).ready(function(){
               setImageProfile(data[i]['Profile']);
               setUserName(data[i]['First_name'], data[i]['Last_name'])
               setUserInfo(data[i]['Location'], data[i]['Phone'], data[i]['Telegram']);
-              retrieveUserAddress(data[i]['Commune']);
+              setAddress(data[i]['Commune']);
             }
             
           }else{
             console.log(data.msg);
             window.location.replace("../Profile")
-          }
-        }
-      })
-    }
-
-    function retrieveUserAddress(commId){
-      console.log(commId);
-      $.ajax({
-        type: 'post',
-        url: '/Assignment2/Kasekam/App/Server/Location/retrieveAddressDetail.php',
-        data:{
-          CommId : commId
-        },
-        dataType: 'json',
-        success:function(data){
-
-          if(!data.strError){
-            for (const i in data) {
-              // setImageCover(data[i]['Cover']);
-              // $('#address').html(data[i]['ProvName'] +", " + data[i]['DistName'] + ", " + data[i]['CommName']);
-              setAddress(data[i]['ProvName'] +", " + data[i]['DistName'] + ", " + data[i]['CommName'])
-            }
-            
-          }else{
-            console.log(data.msg);
           }
         }
       })
@@ -412,8 +389,12 @@ $(document).ready(function(){
       $('#telegram').attr('href', Telegram);
       $('#contact').attr("href", Telegram);
     }
-    function setAddress(Province, District, Commune){
-      $('#address').html(Province +", " + District + ", " + Commune);
+
+    function setAddress(commId){
+      loca.retrieveAddress(commId, function(address) {
+        
+        $('#address').html(address.Province +", " + address.District + ", " + address.Commune);
+      });
     }
 
     //---------------------------

@@ -3,7 +3,7 @@ export class Location {
         $('#' + SelectId).append(`<option value="${Value}">${Text}</option>`);
     }
 
-    retrieveLocation(LocationType, ReqId, IdOfSelectTag, ResId, ResName) {
+    retrieveLocation(LocationType, ReqId, IdOfSelectTag, ResId, ResName, callback) {
         //LocationType is Province, District, Commune
         //ReqId is the where id in query
         //SelectIdOfTag is the id of the select tag
@@ -29,9 +29,52 @@ export class Location {
                     data.forEach((item) => {
                         this.setSelectOption(IdOfSelectTag, item[ResId], item[ResName]);
                     });
+
+                    if (typeof callback === 'function') {
+                        callback();
+                    }
                 }
             }
         });
+    }
+
+    retrieveAddress(commId, callback){
+
+        console.log('Location : '+commId);
+
+        var address = {};
+
+        $.ajax({
+          type: 'post',
+          url: '/Assignment2/Kasekam/App/Server/Location/retrieveAddressDetail.php',
+          data:{
+            CommId : commId
+          },
+          dataType: 'json',
+          success:function(data){
+  
+            if(!data.strError){
+              for (const i in data) {
+
+                address = {
+                    'Province': data[i]['ProvName'],
+                    'District': data[i]['DistName'],
+                    'Commune': data[i]['CommName']
+                };
+                // setImageCover(data[i]['Cover']);
+                // $('#address').html(data[i]['ProvName'] +", " + data[i]['DistName'] + ", " + data[i]['CommName']);
+                // setAddress(data[i]['ProvName'] +", " + data[i]['DistName'] + ", " + data[i]['CommName'])
+              }
+
+              
+              
+            }else{
+                alert(data.msg);
+            }
+
+            callback(address);
+          }
+        })
     }
 }
 
