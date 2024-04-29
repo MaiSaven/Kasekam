@@ -60,7 +60,7 @@ $(document).ready(function(){
     function getProduct(){
       $.ajax({
         type: 'post',
-        url: '/Assignment2/Kasekam/App/Server/Product/retrieveAllProduct.php',
+        url: '/Kasekam/App/Server/Product/retrieveAllProduct.php',
         data:{
           search : search
         },

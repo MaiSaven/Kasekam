@@ -147,7 +147,7 @@ $(document).ready(function(){
 
       $.ajax({
         type: 'post',
-        url: '/Assignment2/Kasekam/App/Server/Product/registerProduct.php',
+        url: '/Kasekam/App/Server/Product/registerProduct.php',
         data:{
           UserId       :  userId,     
           Name         :  productName.val(),     
@@ -216,7 +216,7 @@ $(document).ready(function(){
     function getProduct(){
       $.ajax({
         type: 'post',
-        url: '/Assignment2/Kasekam/App/Server/Product/retrieveProductByUser.php',
+        url: '/Kasekam/App/Server/Product/retrieveProductByUser.php',
         data:{
           UserId : checkUser()
         },
@@ -261,7 +261,7 @@ $(document).ready(function(){
     function retrieveProductForUpdate(id){
       $.ajax({
         type: 'post',
-        url: '/Assignment2/Kasekam/App/Server/Product/retrieveProductForUpdate.php',
+        url: '/Kasekam/App/Server/Product/retrieveProductForUpdate.php',
         data:{
           ProId : id
         },
@@ -313,7 +313,7 @@ $(document).ready(function(){
 
       $.ajax({
         type: 'post',
-        url: '/Assignment2/Kasekam/App/Server/Product/updateProductInfo.php',
+        url: '/Kasekam/App/Server/Product/updateProductInfo.php',
         data:{
           ProId        :  proIdForUpdate,     
           Name         :  productName.val(),     
@@ -345,7 +345,7 @@ $(document).ready(function(){
     function getUserInfo(){
       $.ajax({
         type: 'post',
-        url: '/Assignment2/Kasekam/App/Server/User/retrieveUserInfo.php',
+        url: '/Kasekam/App/Server/User/retrieveUserInfo.php',
         data:{
           UserId : checkUser()
         },
@@ -425,7 +425,7 @@ $(document).ready(function(){
     function deleteProduct(){
       $.ajax({
         type: 'post',
-        url: '/Assignment2/Kasekam/App/Server/Product/deleteProduct.php',
+        url: '/Kasekam/App/Server/Product/deleteProduct.php',
         data:{
           ProId        :  proIdForDelete,
         },

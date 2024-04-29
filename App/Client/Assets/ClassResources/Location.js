@@ -17,7 +17,7 @@ export class Location {
 
         $.ajax({
             type: 'post',
-            url: '/Assignment2/Kasekam/App/Server/Location/' + functionName + '.php',
+            url: '/Kasekam/App/Server/Location/' + functionName + '.php',
             data: {
                 Id: ReqId
             },
@@ -46,7 +46,7 @@ export class Location {
 
         $.ajax({
           type: 'post',
-          url: '/Assignment2/Kasekam/App/Server/Location/retrieveAddressDetail.php',
+          url: '/Kasekam/App/Server/Location/retrieveAddressDetail.php',
           data:{
             CommId : commId
           },

@@ -74,7 +74,7 @@ $(document).ready(function () {
   function getUserInfo(){
     $.ajax({
       type: 'post',
-      url: '/Assignment2/Kasekam/App/Server/User/retrieveUserInfo.php',
+      url: '/Kasekam/App/Server/User/retrieveUserInfo.php',
       data:{
         UserId : userId
       },
@@ -188,7 +188,7 @@ $(document).ready(function () {
 
     $.ajax({
       type: 'post',
-      url: '/Assignment2/Kasekam/App/Server/User/updateUserInfo.php',
+      url: '/Kasekam/App/Server/User/updateUserInfo.php',
       data:{
         userId     : userId,
         firstName  : firstName.val(),

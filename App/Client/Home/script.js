@@ -30,7 +30,7 @@ $(document).ready(function () {
 
     $.ajax({
       type: "post",
-      url: "/Assignment2/Kasekam/App/Server/User/retrieveUserForHomePage.php",
+      url: "/Kasekam/App/Server/User/retrieveUserForHomePage.php",
       data: {
         userId: userId
       },

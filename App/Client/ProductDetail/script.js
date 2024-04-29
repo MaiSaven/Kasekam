@@ -35,7 +35,7 @@ $(document).ready(function(){
   function getProduct(){
     $.ajax({
       type: 'post',
-      url: '/Assignment2/Kasekam/App/Server/Product/retrieveProductDetail.php',
+      url: '/Kasekam/App/Server/Product/retrieveProductDetail.php',
       data:{
         ProId : UTURL.getDataFromURL("ProdId")
       },
@@ -107,7 +107,7 @@ $(document).ready(function(){
   function getUserInfo(){
     $.ajax({
       type: 'post',
-      url: '/Assignment/Kasekam/App/Server/User/retrieveUserInfo.php',
+      url: '/Kasekam/App/Server/User/retrieveUserInfo.php',
       data:{
         UserId : UserId
       },
