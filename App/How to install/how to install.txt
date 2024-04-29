@@ -1,0 +1,5 @@
+How to install project
+
+1. import database
+2. change database user and passowd in directory
+    Server/Configuration/configuration.php
